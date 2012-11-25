@@ -9,14 +9,15 @@ var strings = {
   pass_entered: "Decrypting..."
 }
 
+// sets up the insertion of the status element
 function insert_status_ele() {
   var div = document.createElement('div');
   div.id = "encryption_status";
   document.getElementsByTagName('body')[0].appendChild(div);
   set_status(password?strings.pass_entered:strings.no_pass);
 }
-insert_status_ele();
 
+// displays a status message for 5 seconds
 function set_status(text) {
   document.getElementById('encryption_status').textContent = text;
   if(text)
@@ -34,6 +35,7 @@ function password_prompt() {
   }
 }
 
+// keyboard shortcuts!
 document.onkeydown = function(e) {
   var res = '';
   var isCtrl = e.ctrlKey;
@@ -70,6 +72,7 @@ document.onkeydown = function(e) {
   }
 }
 
+// monitor the dom for anything to decrypt
 setInterval(function autodecrypt() {
   if (password !== '') {
     var all_eles = [];
@@ -114,3 +117,20 @@ setInterval(function autodecrypt() {
     }
   }
 }, 1000);
+
+// add shortcuts info in the sidebar
+function add_shortcut_info() {
+  var sidenotes = document.getElementsByClassName('sidenotes');
+  if(sidenotes.length > 0){
+    var ele = sidenotes[0].getElementsByTagName('dl')[0];
+    ele.innerHTML += '<dt>Ctrl+[</dt>'+
+    '<dd>Decrypt (inside an edit box)</dd>'+
+    '<dt>Ctrl+]</dt>'+
+    '<dd>Encrypt (inside an edit box)</dd>'+
+    '<dt>Ctrl+{</dt>'+
+    '<dd>Set password</dd>';
+  }
+}
+
+insert_status_ele();
+add_shortcut_info();

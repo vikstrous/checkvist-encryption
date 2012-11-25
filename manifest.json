@@ -5,7 +5,7 @@
   "description": "Store encrypted todo list items at checkvist.com.",
   "content_scripts": [
     {
-      "matches": ["https://checkvist.com/*"],
+      "matches": ["https://checkvist.com/checklists/*"],
       "css": ["style.css"],
       "js": ["sjcl.js", "main.js"]
     }

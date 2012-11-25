@@ -1,0 +1,16 @@
+.node_text>.decrypted {
+  font-family:"Courier New", Courier, monospace;
+  color: #325E23;
+}
+.selectedTask>.node_text>.decrypted {
+  color: #C0FAAC;
+}
+#encryption_status {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  font-family:"Courier New", Courier, monospace;
+  color: #325E23;
+  background-color: #FFFFFF;
+  opacity: 0.5;
+}

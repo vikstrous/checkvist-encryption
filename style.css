@@ -2,7 +2,14 @@
   font-family:"Courier New", Courier, monospace;
   color: #325E23;
 }
+.commentText>.decrypted {
+  font-family:"Courier New", Courier, monospace;
+  color: #325E23;
+}
 .selectedTask>.node_text>.decrypted {
+  color: #C0FAAC;
+}
+.selectedTask>.commentText>.decrypted {
   color: #C0FAAC;
 }
 #encryption_status {

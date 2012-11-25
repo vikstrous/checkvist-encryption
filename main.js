@@ -72,9 +72,17 @@ document.onkeydown = function(e) {
 
 setInterval(function autodecrypt() {
   if (password !== '') {
+    var all_eles = [];
     var eles = document.getElementsByClassName('node_text');
-    for (var i = 0; i < eles.length; i++) {
-      var ele = eles[i].getElementsByTagName('p')[0];
+    for(var i = 0; i < eles.length; i++){
+      all_eles.push(eles[i]);
+    }
+    var eles2 = document.getElementsByClassName('commentText');
+    for(i = 0; i < eles2.length; i++){
+      all_eles.push(eles2[i]);
+    }
+    for (i = 0; i < all_eles.length; i++) {
+      var ele = all_eles[i].getElementsByTagName('p')[0];
       if (ele) {
         var ct = ele.textContent;
         if (ct) {

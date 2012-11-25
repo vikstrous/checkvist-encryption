@@ -102,7 +102,9 @@ setInterval(function autodecrypt() {
                 set_status('Wrong password.');
               }
               if (success) {
+                pt = pt.replace(/\n/g, "--NeWlInE--");
                 ele.textContent = pt;
+                ele.innerHTML = ele.textContent.replace(/--NeWlInE--/g, "<br/>");
                 ele.className = "decrypted";
               }
             }

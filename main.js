@@ -24,9 +24,10 @@ function set_status(text) {
 }
 
 function password_prompt() {
-  password = prompt("Password");
-  localStorage['password'] = password;
-  if (password) {
+  var pass = prompt("Password");
+  if(pass){
+    password = pass;
+    localStorage['password'] = password;
     set_status(strings.pass_entered);
   } else {
     set_status(strings.no_pass);

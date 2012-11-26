@@ -73,16 +73,28 @@ document.onkeydown = function(e) {
 }
 
 // monitor the dom for anything to decrypt
-setInterval(function autodecrypt() {
+
+document.addEventListener("DOMNodeInserted", function(e) {
+  if(e.target.nodeType == Node.ELEMENT_NODE){
+    autodecrypt(e.target);
+  }
+}, false);
+
+function autodecrypt(doc) {
   if (password !== '') {
     var all_eles = [];
-    var eles = document.getElementsByClassName('node_text');
-    for(var i = 0; i < eles.length; i++){
-      all_eles.push(eles[i]);
-    }
-    var eles2 = document.getElementsByClassName('commentText');
-    for(i = 0; i < eles2.length; i++){
-      all_eles.push(eles2[i]);
+    var regex =  new RegExp('\\snode_text\\s|\\scommentText\\s');
+    if(regex.test(' '+doc.className+' ')){
+      all_eles.push(doc);
+    } else {
+      var eles = doc.getElementsByClassName('node_text'); //and check the current node
+      for(var i = 0; i < eles.length; i++){
+        all_eles.push(eles[i]);
+      }
+      var eles2 = doc.getElementsByClassName('commentText');
+      for(i = 0; i < eles2.length; i++){
+        all_eles.push(eles2[i]);
+      }
     }
     for (i = 0; i < all_eles.length; i++) {
       var ele = all_eles[i].getElementsByTagName('p')[0];
@@ -116,7 +128,8 @@ setInterval(function autodecrypt() {
       }
     }
   }
-}, 1000);
+}
+
 
 // add shortcuts info in the sidebar
 function add_shortcut_info() {

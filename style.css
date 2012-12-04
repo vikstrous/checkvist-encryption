@@ -12,7 +12,7 @@
 .selectedTask>.commentText>.decrypted {
   color: #C0FAAC;
 }
-#encryption_status {
+#checkvist_enc_status {
   position: fixed;
   left: 10px;
   top: 10px;

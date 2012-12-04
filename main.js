@@ -205,7 +205,7 @@ function autodecrypt(doc) {
       }
     }
     for (i = 0; i < all_eles.length; i++) {
-      ele = all_eles[i].getElementsByTagName('p')[0];
+      ele = all_eles[i];
       if (ele) {
         ct = ele.textContent;
         if (ct) {

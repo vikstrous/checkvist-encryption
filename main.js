@@ -183,7 +183,7 @@ function autodecrypt(doc) {
       pt = do_autodecrypt(ct);
       if(pt){
         ele.value = pt;
-        ele.className = "decrypted";
+        ele.className += " decrypted";
         if(pt != ct){
           set_encryption_status(true);
         }
@@ -217,7 +217,7 @@ function autodecrypt(doc) {
               pt = pt.replace(/\n/g, "--NeWlInE--");
               ele.textContent = pt;
               ele.innerHTML = ele.textContent.replace(/--NeWlInE--/g, "<br/>");
-              ele.className = "decrypted";
+              ele.className += " decrypted";
             }
           }
         }

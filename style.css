@@ -1,15 +1,15 @@
-.node_text>.decrypted {
+.node_text.decrypted {
   font-family:"Courier New", Courier, monospace;
   color: #325E23;
 }
-.commentText>.decrypted {
+.commentText.decrypted {
   font-family:"Courier New", Courier, monospace;
   color: #325E23;
 }
-.selectedTask>.node_text>.decrypted {
+.selectedTask>.node_text.decrypted {
   color: #C0FAAC;
 }
-.selectedTask>.commentText>.decrypted {
+.selectedTask>.commentText.decrypted {
   color: #C0FAAC;
 }
 #checkvist_enc_status {
